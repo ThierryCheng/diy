@@ -5,6 +5,8 @@ services:
     container_name: baidunetdisk
     environment:
       - TZ=Etc/UTC
+      - PUID=0
+      - PGID=0
     volumes:
       - /mnt/user/media/baidunetdisk:/download/
       - /mnt/user/appdata/baidunetdisk/config:/config
