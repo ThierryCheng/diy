@@ -37,7 +37,7 @@ services:
       # 4.x版本的汉化文件下载地址：https://github.com/ronggang/transmission-web-control
       # 将 "/src" 这个文件夹里的东西放到 "/config/webui" 内即可
       - USER=admin
-      - PASS=adminadmin
+      - PASS=ThiErry_098
       # TR账号密码，预设为cheems，记住一定要修改密码，否则后果自负
       - PEERPORT=52001
       # 自定义peer传输端口
