@@ -32,7 +32,7 @@ services:
     volumes:
       - /mnt/user/appdata/clouddrive2:/config
       # 配置文件目录，可在变量中进行配置
-      - /mnt/addons/clouddrive:/CloudNAS
+      - /mnt/disk1/clouddrive:/CloudNAS
       #- /Config：/CLOUDDRIVE_HOME
       # - /mnt/user:/【自定义一个名字】:shared
       # 文件目录，多个目录需要分别映射进来，需要满足配置文件说明中的要求，见下例子
