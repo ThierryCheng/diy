@@ -32,7 +32,8 @@ services:
             - 'HDFANS_UID=48206'
             - 'HDFANS_PASSKEY=811f4b82afd04bd2ed36628c00c4257f'            
             - 'SUPERUSER=admin'
-            - 'PROXY_HOST=http://192.168.50.234:1080'
+            #- 'PROXY_HOST=http://192.168.50.234:1080'
+            - 'MOVIEPILOT_AUTO_UPDATE=true'
 
         restart: always
         image: jxxghp/moviepilot-v2:latest
