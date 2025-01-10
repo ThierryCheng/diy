@@ -7,7 +7,8 @@ services:
     ports:
       - "35455:35455"
     network_mode: bridge
-    command: -tv=true -aesKey="6q4zcxbm7i5e5q5morv1hbgzckg7uqsg"
+    command: -tv=true -aesKey=lr80thv1vwwike3h0nie6xni7s9b8quv -userid=7083529425 -token=a7c985a825049992005ccc2f3c31b1a8d32b013bcc515f374d80363d83cd90cb9f7915b4692966d55de1633c57e0185aa8bfd55afcfa04196d14bf71db00ca7b3660b1885874b8
+
 
     labels:
       icon: https://raw.githubusercontent.com/xushier/HD-Icons/main/border-radius/Iptv_G.png
