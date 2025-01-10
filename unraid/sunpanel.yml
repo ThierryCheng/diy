@@ -1,6 +1,6 @@
 version: "3.3"
 services:
-  homepage:
+  sun-panel:
     image: hslr/sun-panel:latest
     container_name: sun-panel
     ports:
