@@ -6,8 +6,8 @@ services:
     ports:
       - 5572:5572
     volumes:
-      - /mnt/user/appdata/rclone/config: /config/rclone
-      - /mnt/user/: /data      
+      - /mnt/user/appdata/rclone/config:/config/rclone
+      - /mnt/user/:/data      
 
 
     restart: always
