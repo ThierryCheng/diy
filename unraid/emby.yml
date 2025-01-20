@@ -1,7 +1,8 @@
 version: "2.1"
 services:
   emby:
-    image: lovechen/embyserver:latest
+    #image: lovechen/embyserver:latest
+    image: linuxserver/emby
     container_name: emby
     environment:
       - PUID=0
