@@ -36,6 +36,8 @@ services:
       - UMASK=022
       # 默认创建新文件的权限，一般写022
       - TZ=Asia/Shanghai
+      - SETTINGS_ENCRYPTION_KEY=ThiErry_098
+      - DUPLICATI__WEBSERVICE_PASSWORD=ThiErry_098
       # 时区
       # CLI_ARGS=
       # 指定要用于启动程序的CLI参数，可选，非必要
