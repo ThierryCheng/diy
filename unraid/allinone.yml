@@ -1,6 +1,6 @@
 services:
   allinone:
-    image: youshandefeiyang/allinone
+    image: youshandefeiyang/allinone:latest
     container_name: allinone
     privileged: true
     restart: always
