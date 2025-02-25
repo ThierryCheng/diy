@@ -32,7 +32,7 @@ services:
       - /mnt/user/media:/media
       # 可以自定义，可以写多个
     environment:
-      - PLEX_CLAIM=claim-aAQV2XLkGedg6z8KQdcb
+      - PLEX_CLAIM=claim-rtB9osqUrBzrUurDjbX2
       # 登录密钥，打开下面的地址，注册并登录后获取，如果对账号注册有洁癖，plex账号哪怕你买了pass通行证也可以注销
       # https://plex.tv/claim
       # - NVIDIA_DRIVER_CAPABILITIES=all
@@ -45,11 +45,11 @@ services:
       # 默认创建新文件的权限，一般写022
       - TZ=Asia/Shanghai
       # 时区
-    # network_mode: bridge
-    network_mode: host
+    network_mode: bridge
+    #network_mode: host
     # host模式需要容器内的端口不被占用，不需要端口映射，后续端口映射全都开头加#注释掉，否则注释掉这条
-    # ports:
-      # - 32400:32400/tcp
+    ports:
+      - 32400:32400/tcp
       # WebUI http端口
       # - 3005:3005/tcp
       # - 8324:8324/tcp
