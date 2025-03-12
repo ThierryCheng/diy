@@ -36,8 +36,8 @@ services:
       - PUID=1000
       - PGID=1000
       # 直接给root权限
-      - UMASK=022
-      # 默认创建新文件的权限，一般写022
+      - UMASK=444
+      # 默认创建新文件的权限，设置为只读
     network_mode: bridge
     # 80端口被占用，不能用host
     ports:
