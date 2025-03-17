@@ -2,6 +2,7 @@ version: "3"
 services:
   hd-icons:
     image: xushier/hd-icons:latest
+    container_name: hd-icons
     ports:
       - 50560:50560
     volumes:
