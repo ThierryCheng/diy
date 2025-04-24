@@ -1,0 +1,56 @@
+{
+  "jellyfin": [
+    {
+      "server_name": "MyEmby",
+      "server_type": "emby",
+      "base_url": "http://192.168.50.189:8096",
+      "user_name": "emby",
+      "password": "111111",
+      "update_poster": true
+    }
+  ],
+  "cron": "0 1 * * *",
+  "exclude_update_library": ["Short", "Playlists", "合集"],
+  "template_mapping": [
+    {
+      "library_name": "电视剧-动漫",
+      "library_ch_name": "电视剧-动漫",
+      "library_eng_name": "TV-ANIME"
+    },
+    {
+      "library_name": "电视剧-国产",
+      "library_ch_name": "电视剧-国产",
+      "library_eng_name": "TV-CHINA"
+    },
+    {
+      "library_name": "电视剧-纪录片",
+      "library_ch_name": "电视剧-纪录片",
+      "library_eng_name": "TV-DOCUMENTARY"
+    },
+    {
+      "library_name": "电视剧-欧美",
+      "library_ch_name": "电视剧-欧美",
+      "library_eng_name": "TV-AMERICAN"
+    },
+    {
+      "library_name": "电视剧-日韩",
+      "library_ch_name": "电视剧-日韩",
+      "library_eng_name": "TV-JPAN&KOR"
+    },
+    {
+      "library_name": "电影-动画",
+      "library_ch_name": "电影-动画",
+      "library_eng_name": "MOVIE-ANIME"
+    },
+    {
+      "library_name": "电影-华语",
+      "library_ch_name": "电影-华语",
+      "library_eng_name": "MOVIE-CHINA"
+    },
+    {
+      "library_name": "电影-外语",
+      "library_ch_name": "电影-外语",
+      "library_eng_name": "MOVIE-FOREIGN"
+    }
+  ]     
+}
