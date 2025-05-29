@@ -1,21 +1,14 @@
 services:
   myServers:
-    # :dev是开发版，:latest是正式版
     image: myservers/my_servers:latest
-    # 主机网络接口
     network_mode: host
     container_name: myservers
     volumes:
-      # 主机进程映射
       - /proc:/proc
-      # docker等信息映射
       - /var/run:/var/run
-      # 服务端所有的数据都在/app/data文件夹中，映射到主机 ~/.myservers/data，这样容器重建后数据不丢
       - /mnt/user/appdata/myservers/data:/app/data
-      # 映射配置
       - /mnt/user/appdata/myservers/config:/app/config
-    # -k 密钥请自行修改
-    command: /app/app -k e8edf0cd4c5d49694c39edf7a879a92e 2>&1 > /dev/null
+    command: /app/app -k e8edf0cd4c5
     restart: always
     labels:
       icon: httphttps://raw.githubusercontent.com/xushier/HD-Icons/main/border-radius/Jumpserver_A.png
