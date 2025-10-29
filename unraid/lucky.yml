@@ -1,0 +1,12 @@
+version: '3'
+services:
+  lucky:
+    image: gdy666/lucky
+    container_name: lucky
+    labels:
+      net.unraid.docker.icon: "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Lucky/icon.png"
+      net.unraid.docker.webui: "http://[IP]:[PORT:16601]"
+    volumes:
+      - /mnt/user/appdata/lucky:/goodluck
+    network_mode: host
+    restart: always
