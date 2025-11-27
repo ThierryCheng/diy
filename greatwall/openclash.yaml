@@ -4,11 +4,11 @@
 # 机场订阅
 proxy-providers:
   Airport1:
-    url: "https://hongxingyun10.vip/hxyunvip?token=98ccdcbc51d1c6cb976392110801b336"
+    url: "https://hongxingyun10.vip/hxyunvip?token=71f0508da3955ac2dd70540cfed90cc2"
     type: http
-    interval: 8640000000000
+    interval: 86400
     health-check:
-      enable: true
+      enable: false
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 直连

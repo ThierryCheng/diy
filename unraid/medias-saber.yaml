@@ -1,0 +1,79 @@
+services:
+  # redis 缓存数据，加速运行，必选
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: unless-stopped
+#    network_mode: host
+    networks:
+      - msgo_network
+    volumes:
+      - ./redis/data:/data
+    environment:
+      TZ: Asia/Shanghai
+      GOSU_VERSION: 1.17
+#    ports:
+#      - "6379:6379" # 仅外部使用
+
+  # pgsql 主数据库，必选
+  pgsql:
+    image: postgres:17-alpine
+    container_name: pgsql
+    restart: unless-stopped
+#    network_mode: host
+    networks:
+      - msgo_network
+    volumes:
+        - ./pgsql/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ms # 数据库
+      POSTGRESQL_WAL_COMPRESSION: lz4  # 压缩算法
+      POSTGRESQL_MAX_CONNECTIONS: 2048 # 最大连接数
+      POSTGRES_USER: postgres # 用户
+      POSTGRES_PASSWORD: ms888888 # 密码
+#    ports:
+#      - "5432:5432" # 仅外部使用
+
+  # msgo go 重写船新版本
+  msgo:
+    image: xylplm/media-saber:latest
+    container_name: msgo
+    restart: unless-stopped
+#    network_mode: host
+    networks:
+      - msgo_network
+    environment:
+      TZ: Asia/Shanghai
+      MS_PORT: 8888 # 前端端口
+      MS_AUTH_EMAIL: xxx # 邮箱
+      MS_AUTH_SLOGAN: xxx # 授权码
+      MS_LOG_LEVEL: debug # 日志级别
+      MS_LOG_KEEP_DAYS: 14 # 日志保留天数
+      MS_REDIS_HOST: redis:6379 # redis 容器名:端口
+      MS_REDIS_PASS:  # redis 密码
+      MS_TIMEOUT: 60000 # 接口请求超时，单位毫秒
+      MS_PGSQL_DBNAME: ms # pgsql 数据库
+      MS_PGSQL_USERNAME: postgres #  pgsql 用户
+      MS_PGSQL_PASSWORD: ms888888 # pgsql 密码
+      MS_PGSQL_PATH: pgsql # pgsql 容器名
+      MS_PGSQL_PORT: 5432 # pgsql 端口
+      MS_PGSQL_LOG_MODE: prod # 数据库日志 options=dev|test|prod|silent
+      MS_MQ_CONCURRENCY: 10 # MQ 最大并发数
+      MS_MCP_SERVER_HTTP_ADDR: "0.0.0.0:5000" # mcp streamable http addr
+      MS_PATH_WATCH_TIME: 30 #目录监听时间间隔，默认30s
+    privileged: true
+    volumes:
+      - ./ms/config:/app/config
+      - /mnt/user/media:/media
+#      - ./qb:/qb # 挂载 qb 目录，转种要用到
+    ports:
+      - "8888:8888" # 前端端口
+#      - "22698:22698" # 后端端口
+#      - "8091:8091" # 使用 strm302 功能后，emby/jellyfin 代理端口
+#      - "8091:8091" # 使用 strm302 功能后，emby/jellyfin 代理端口
+#      - "6060:6060" # pprof 端口
+#      - "6080:5000" # mcp 端口
+
+networks:
+  msgo_network:
+    name: msgo_network
