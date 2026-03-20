@@ -132,14 +132,13 @@ proxy-groups:
 # 规则匹配
 rules:
 
-  - DST-PORT,10000-65535,直连
-  
   - IP-CIDR,10.0.0.0/8,直连
   - IP-CIDR,172.16.0.0/12,直连
   - IP-CIDR,192.168.0.0/16,直连
   - IP-CIDR,100.64.0.0/10,直连
   - IP-CIDR,127.0.0.0/8,直连
-  
+
+  - DST-PORT,52000,直连
   - DOMAIN-KEYWORD, tracker, 直连  
   - DOMAIN, stun.netbird.io, 直连  
   - DOMAIN-SUFFIX, netbird.io, 直连  
