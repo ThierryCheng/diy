@@ -29,7 +29,7 @@ ipv6: false
 unified-delay: true
 tcp-concurrent: true
 # interface-name: enp6s18
-log-level: warning
+log-level: info
 find-process-mode: 'off'
 global-client-fingerprint: chrome
 keep-alive-idle: 600
