@@ -185,6 +185,22 @@ proxy-groups:
 # ※※※※※※※※※※※※※※※ 规则匹配 ※※※※※※※※※※※※※※※
 rules:
    # 服务分流
+   
+  - DOMAIN-KEYWORD,themoviedb,一键代理
+  - DOMAIN-KEYWORD,tmdb,一键代理
+  - DOMAIN-SUFFIX,thetvdb.com,一键代理
+  - DOMAIN-SUFFIX,tvdb.com,一键代理
+  - DOMAIN-SUFFIX,fanart.tv,一键代理
+  - DOMAIN-SUFFIX,opensubtitles.org,一键代理
+  - DOMAIN-SUFFIX,docker.com,一键代理
+  - DOMAIN-SUFFIX,docker.io,一键代理
+  - DOMAIN-SUFFIX,githubusercontent.com,一键代理
+   
+  - DST-PORT,51413,DIRECT        # Transmission 默认通讯端口
+  - DST-PORT,6881-6889,DIRECT    # 其他常见的 BT 协议通用端口
+  - DST-PORT,52001,DIRECT 
+  - DST-PORT,52000,DIRECT 
+  - DOMAIN-KEYWORD,announce,DIRECT
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private_domain,DIRECT
   - RULE-SET,speedtest_domain,Speedtest
@@ -237,6 +253,11 @@ rules:
   - DOMAIN-SUFFIX, soulvoice.club, DIRECT  
   - DOMAIN-SUFFIX, pthome.net, DIRECT  
   - DOMAIN-SUFFIX, et8.org, DIRECT
+    
+  #- AND,((SRC-IP-CIDR,192.168.50.189/32),(DST-PORT,80)),一键代理
+  #- AND,((SRC-IP-CIDR,192.168.50.189/32),(DST-PORT,443)),一键代理
+  
+  - SRC-IP-CIDR,192.168.50.189/32,DIRECT
   - MATCH,漏网之鱼
 
 # 规则来源
